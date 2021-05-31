@@ -68,7 +68,7 @@ public class Peli {
 
 		System.out.println("Teit " + arvot[1] + " pistettä.");
 		if (arvot[3] > 0)
-		System.out.println("Lisäksi sait " + arvot[3] + " koriin johtanutta syöttöä.");
+			System.out.println("Lisäksi sait " + arvot[3] + " koriin johtanutta syöttöä.");
 
 		lukija.close();
 
@@ -103,6 +103,7 @@ public class Peli {
 				if (rng >= 0.4) {
 					System.out.println("Joukkuelaisesi heitti kolme pistettä. Hyvin pelattu!");
 					// arvot[2] += 2; lisää kaksi pistettä karmaa. Kymmennellä voittaa pelin.
+					arvot[3]++;
 					arvot[2] += 2;
 					break;
 				} else {
@@ -150,7 +151,7 @@ public class Peli {
 		// Paljonko pelikellosta otetaan pois aikaa.
 		arvot[0] -= 4;
 
-		//Kaikki arvot palautetaan.
+		// Kaikki arvot palautetaan.
 		return arvot;
 
 	}
@@ -158,7 +159,7 @@ public class Peli {
 	public static int[] tokaTapahtuma(int[] arvot, Scanner lukija) {
 
 		// Muutkin aliohjelmat toimivat samalla periaatteella kuin ensimmäinen.
-		
+
 		System.out.println();
 		System.out.println("Peliä on jäljellä: " + arvot[0] + " minuuttia");
 		System.out.println();
@@ -178,7 +179,7 @@ public class Peli {
 				System.out.println("Tiimiläisesi ei odottanut syöttöä, joka johti pallonmenetykseen.");
 				break;
 			case 2:
-				if (rng <= 0.5 && rng >= 0.1) {
+				if (rng < 0.5 && rng > 0.1) {
 					System.out.println("Sinua rikotaan heittäessäsi. Saat kaksi vapaaheittoa. Osut niistä molemmat.");
 					arvot[1] += 2;
 					arvot[2]++;
@@ -287,7 +288,7 @@ public class Peli {
 	public static int[] penkki(int[] arvot) {
 
 		// Kolmannen tapahtuman jälkeen pelaaja lepää viisi minuuttia penkillä.
-		
+
 		System.out.println();
 		System.out.println("Olet väsynyt, joten sinut otetaan viideksi minuutiksi penkille huilaamaan.");
 
@@ -298,8 +299,9 @@ public class Peli {
 
 	public static int[] neljasTapahtuma(int[] arvot, Scanner lukija) {
 
-		// Neljännessä tapahtumassa pelaaja palaa penkiltä kentälle. Neljäs tapahtuma suoritetaan vain kerran.
-		
+		// Neljännessä tapahtumassa pelaaja palaa penkiltä kentälle. Neljäs tapahtuma
+		// suoritetaan vain kerran.
+
 		System.out.println();
 		System.out.println("Peliä on jäljellä: " + arvot[0] + " minuuttia");
 		System.out.println();
@@ -361,8 +363,9 @@ public class Peli {
 
 	public static int[] vikaTapahtuma(int[] arvot, Scanner lukija) {
 
-		// Viimeinen tapahtuma suoritetaan myös vain kerran ja sen on kriittinen pelin lopputulokseen.
-		
+		// Viimeinen tapahtuma suoritetaan myös vain kerran ja sen on kriittinen pelin
+		// lopputulokseen.
+
 		double rng = Math.random();
 
 		int valinta = 0;
