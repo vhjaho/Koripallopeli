@@ -185,7 +185,7 @@ public class Peli {
 					arvot[2]++;
 					break;
 				} else if (rng <= 0.1) {
-					System.out.println("Osuit toisen kahdesta vapaaheitosta.");
+					System.out.println("Sinua rikotaan heittäessäsi. Saat kaksi vapaaheittoa. Osut niistä toisen.");
 					arvot[1]++;
 					break;
 				} else {
